@@ -52,8 +52,11 @@ extension CharacterListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel?.charactersFiltered[indexPath.row].name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell") as? CharacterTableViewCell,
+        let character = viewModel?.charactersFiltered[indexPath.row] else {
+            return UITableViewCell()
+        }
+        cell.setup(with: character)
         return cell
     }
 }

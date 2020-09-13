@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		3218BB0B25018500001F75FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BB0A25018500001F75FC /* NetworkManager.swift */; };
 		3218BB0D25018F9B001F75FC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BB0C25018F9B001F75FC /* Endpoint.swift */; };
 		3242284B2505757A00ECB609 /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242284A2505757A00ECB609 /* CharacterDetailsViewController.swift */; };
+		32484400250E8572007EFA51 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 324843FF250E8572007EFA51 /* SDWebImage */; };
+		32484402250E85F6007EFA51 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484401250E85F6007EFA51 /* CharacterTableViewCell.swift */; };
 		3276E34C2509658E0022412D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276E34B2509658E0022412D /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,7 @@
 		3218BB0A25018500001F75FC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3218BB0C25018F9B001F75FC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		3242284A2505757A00ECB609 /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
+		32484401250E85F6007EFA51 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		3276E34B2509658E0022412D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32484400250E8572007EFA51 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				3242284A2505757A00ECB609 /* CharacterDetailsViewController.swift */,
+				32484401250E85F6007EFA51 /* CharacterTableViewCell.swift */,
 			);
 			path = CharacterDetails;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 			);
 			name = BreakingBad;
 			packageProductDependencies = (
+				324843FF250E8572007EFA51 /* SDWebImage */,
 			);
 			productName = BreakingBad;
 			productReference = 3218BACD2501834D001F75FC /* BreakingBad.app */;
@@ -234,6 +240,7 @@
 			);
 			mainGroup = 3218BAC42501834D001F75FC;
 			packageReferences = (
+				324843FE250E8572007EFA51 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 3218BACE2501834D001F75FC /* Products */;
 			projectDirPath = "";
@@ -277,6 +284,7 @@
 				3218BB0525018421001F75FC /* Character.swift in Sources */,
 				3218BB0925018438001F75FC /* CharacterListViewController.swift in Sources */,
 				3218BAD12501834D001F75FC /* AppDelegate.swift in Sources */,
+				32484402250E85F6007EFA51 /* CharacterTableViewCell.swift in Sources */,
 				3218BAD32501834D001F75FC /* SceneDelegate.swift in Sources */,
 				3218BB0B25018500001F75FC /* NetworkManager.swift in Sources */,
 			);
@@ -541,6 +549,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		324843FE250E8572007EFA51 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		324843FF250E8572007EFA51 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 324843FE250E8572007EFA51 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3218BAC52501834D001F75FC /* Project object */;
 }

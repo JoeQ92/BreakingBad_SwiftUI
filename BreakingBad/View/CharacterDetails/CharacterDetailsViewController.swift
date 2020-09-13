@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterDetailsViewController: UIViewController {
     
@@ -22,15 +23,20 @@ class CharacterDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("character = \(character.debugDescription)")
         setupViews()
     }
     
     func setupViews() {
-        nameLabel.text = character?.name
-        occupationLabel.text = character?.occupation.joined(separator: ", ")
-        statusLabel.text = character?.status
-        nicknameLabel.text = character?.nickname
-        seasonLabel.text = character?.appearance.map(String.init).joined(separator: ", ")
+        guard let character = character else {
+            fatalError()
+        }
+        
+        imageView.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
+        imageView.sd_setImage(with: URL(string: character.img), placeholderImage: UIImage(named: "placeholder"))
+        nameLabel.text = character.name
+        occupationLabel.text = character.occupation.joined(separator: ", ")
+        statusLabel.text = character.status
+        nicknameLabel.text = character.nickname
+        seasonLabel.text = character.appearance.map(String.init).joined(separator: ", ")
     }
 }
