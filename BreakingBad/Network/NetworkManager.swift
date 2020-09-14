@@ -28,7 +28,6 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
-    // MARK: - Private
     private func networkRequest(endpoint: Endpoint, completion: @escaping (_ data: Data?, _ error: Error?) -> ()) {
         
         if let request = endpoint.urlRequest {

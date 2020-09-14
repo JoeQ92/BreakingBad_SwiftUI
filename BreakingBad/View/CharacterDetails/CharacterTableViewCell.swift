@@ -2,7 +2,7 @@
 //  CharacterTableViewCell.swift
 //  BreakingBad
 //
-//  Created by GAN on 13/09/2020.
+//  Created by Joe Quesne on 13/09/2020.
 //  Copyright © 2020 JQ. All rights reserved.
 //
 
