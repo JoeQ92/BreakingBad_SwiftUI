@@ -37,6 +37,6 @@ class CharacterDetailsViewController: UIViewController {
         occupationLabel.text = character.occupation.joined(separator: ", ")
         statusLabel.text = character.status
         nicknameLabel.text = character.nickname
-        seasonLabel.text = character.appearance.map(String.init).joined(separator: ", ")
+        seasonLabel.text = character.appearance?.map(String.init).joined(separator: ", ")
     }
 }

@@ -49,7 +49,8 @@ class CharacterListViewModel {
     private func filterCharacters() {
         charactersFiltered = charactersAll.filter {
             let containsName = nameFilter.isEmpty ? true: $0.name.lowercased().contains(nameFilter.lowercased())
-            let containsSeason = seasonFilter.isEmpty ? true: !(Set($0.appearance).intersection(seasonFilter).isEmpty)
+            
+            let containsSeason = seasonFilter.isEmpty ? true: !(Set($0.appearance ?? [-1]).intersection(seasonFilter).isEmpty)
             return containsName && containsSeason
         }
     }
