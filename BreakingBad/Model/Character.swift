@@ -9,7 +9,8 @@
 import Foundation
 
 // https://breakingbadapi.com/api/characters
-struct Character:Codable {
+struct Character: Codable, Identifiable, Hashable {
+    let id = UUID()
     let charId: Int
     let name: String
     let birthday: String
@@ -23,6 +24,7 @@ struct Character:Codable {
     let betterCallSaulAppearance: [Int]
     
     enum CodingKeys: String, CodingKey {
+        case id
         case charId = "char_id"
         case name
         case birthday

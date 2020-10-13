@@ -12,16 +12,12 @@ protocol CharacterListViewModelDelegate: class {
     func charactersUpdated()
 }
 
-class CharacterListViewModel {
+class CharacterListViewModel: ObservableObject {
     //MARK: - Properties
     private let networkManager: NetworkManagerProtocol
     private var charactersAll: [Character] = []
     
-    public var charactersFiltered: [Character] = [] {
-        didSet {
-            self.delegate?.charactersUpdated()
-        }
-    }
+    @Published public var charactersFiltered: [Character] = []
     public var seasonFilter: Set<Int> = Set() {
         didSet {
             filterCharacters()
@@ -47,6 +43,7 @@ class CharacterListViewModel {
     }
     
     private func filterCharacters() {
+        print("seasonFilter = \(seasonFilter) nameFilter = \(nameFilter)")
         charactersFiltered = charactersAll.filter {
             let containsName = nameFilter.isEmpty ? true: $0.name.lowercased().contains(nameFilter.lowercased())
             

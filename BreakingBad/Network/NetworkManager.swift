@@ -19,7 +19,9 @@ class NetworkManager: NetworkManagerProtocol {
             if let jsonData = data {
                 do {
                     let characters = try JSONDecoder().decode([Character].self, from: jsonData)
-                    completion(characters)
+                    DispatchQueue.main.async {
+                        completion(characters)
+                    }
                 }
                 catch {
                     print("error = \(error)")
